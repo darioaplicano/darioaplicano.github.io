@@ -1,14 +1,28 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - darioaplicano
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - darioaplicano/darioaplicano.github.io
+  - darioaplicano/Video2Text
+  - darioaplicano/Docker-Tools
+  - darioaplicano/adfa-utilities
+  - darioaplicano/ldap_module
+  - darioaplicano/data_visualization_bokeh_python
+  - darioaplicano/nds_malware_prediction
+  - darioaplicano/ALTEN_DS_PyDCaE
+  - darioaplicano/NDS_MDS
+  - darioaplicano/lrsChain
+  - darioaplicano/bnBreastCancer
+  - darioaplicano/rslp
+  - darioaplicano/scala_practicing
+  - darioaplicano/HTML2TXT
+  - darioaplicano/pyMark2HTML
+  - darioaplicano/pyScript
+  - darioaplicano/pyBros
+  - darioaplicano/home_platform
+  - darioaplicano/basic_jupyter
+  - darioaplicano/cesamo_Amapala
+  - darioaplicano/tead
+  - darioaplicano/cpme
