@@ -1,34 +1,12 @@
-{% assign lang = site.lang | split: '-' | first %}
-
-{% case lang %}
-  {% when 'pt' %}
-    {% assign lang = site.lang %}
-
-  {% when 'zh' %}
-    {% assign lang_last = site.lang | split: '-' | last %}
-    {% case lang_last %}
-      {% when 'cn', 'sg', 'my', 'hans' %}
-        {% assign lang = 'cn' %}
-      {% when 'tw', 'hk', 'mo', 'hant' %}
-        {% assign lang = 'zh-tw' %}
-    {% endcase %}
-
-    {% comment %} Add a new language using when... if needed {% endcomment %}
-    {% comment %} If you still encounter language-display issues, check the available locale codes in github-readme-stats (different from ISO-639 standard used in your website) {% endcomment %}
-    {% comment %} https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#available-locales {% endcomment %}
-{% endcase %}
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.username }}">
-    <img
-      class="only-light w-100"
-      alt="{{ include.username }}"
-      src="{{ site.external_services.github_readme_stats_url }}/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&locale={{ lang }}&show_icons=true"
-    >
-    <img
-      class="only-dark w-100"
-      alt="{{ include.username }}"
-      src="{{ site.external_services.github_readme_stats_url }}/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&locale={{ lang }}&show_icons=true"
-    >
+<div class="user-card p-3 mb-3" data-user="{{ include.username }}">
+  <a href="https://github.com/{{ include.username }}" target="_blank" rel="noopener noreferrer" class="user-card-link">
+    <img class="user-card-avatar" src="https://github.com/{{ include.username }}.png?size=200" alt="{{ include.username }}" loading="lazy" width="96" height="96">
+    <div class="user-card-name" data-field="name">{{ include.username }}</div>
+    <div class="user-card-login">@{{ include.username }}</div>
+    <p class="user-card-bio" data-field="bio"></p>
+    <div class="user-card-meta">
+      <span><i class="fa-regular fa-folder-open"></i> <span data-field="public_repos">—</span> repos</span>
+      <span><i class="fa-regular fa-user"></i> <span data-field="followers">—</span> seguidores</span>
+    </div>
   </a>
 </div>
