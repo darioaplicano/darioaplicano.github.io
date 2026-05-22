@@ -148,14 +148,14 @@ layout: default
         {% elsif page.isbn %}
           <img alt="{{ page.title }} cover" src="https://covers.openlibrary.org/b/isbn/{{ page.isbn }}-L.jpg?default=false">
           <figcaption>
-            Cover of <em>{{ page.title }}</em> on the <a href="https://openlibrary.org/isbn/{{ page.isbn }}">Open Library</a>.
+            Portada de <em>{{ page.title }}</em> en <a href="https://openlibrary.org/isbn/{{ page.isbn }}">Open Library</a>.
           </figcaption>
         {% endif %}
       </figure>
       <br class="mobile-break" clear="right">
       <h4>
-        {% if page.start %} Start Date: {{ page.start | date: '%-d %B %Y' }}. {% endif %}
-        {% if page.end %} End Date: {{ page.end | date: '%-d %B %Y' }}. {% endif %}
+        {% if page.start %} Fecha de inicio: {{ page.start | date: '%d-%m-%Y' }}. {% endif %}
+        {% if page.end %} Fecha de fin: {{ page.end | date: '%d-%m-%Y' }}. {% endif %}
       </h4>
       {{ content }}
     {% endif %}

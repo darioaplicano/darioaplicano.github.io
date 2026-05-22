@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: Publicaciones academicas, ordenadas por ano en orden descendente.
+title: publicaciones
+description: Publicaciones academicas, ordenadas por año en orden descendente.
 nav: true
 nav_order: 2
 ---

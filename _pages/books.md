@@ -1,13 +1,13 @@
 ---
 layout: book-shelf
-title: bookshelf
+title: estantería
 permalink: /books/
 nav: false
 collection: books
 ---
 
-> What an astonishing thing a book is. It's a flat object made from a tree with flexible parts on which are imprinted lots of funny dark squiggles. But one glance at it and you're inside the mind of another person, maybe somebody dead for thousands of years. Across the millennia, an author is speaking clearly and silently inside your head, directly to you. Writing is perhaps the greatest of human inventions, binding together people who never knew each other, citizens of distant epochs. Books break the shackles of time. A book is proof that humans are capable of working magic.
+> ¡Qué cosa tan asombrosa es un libro! Es un objeto plano hecho de un árbol con partes flexibles en las que se imprimen muchos garabatos oscuros divertidos. Pero una sola mirada y estás dentro de la mente de otra persona, quizás alguien muerto desde hace miles de años. A través de los milenios, un autor te habla con claridad y en silencio dentro de tu cabeza, directamente a ti. La escritura es quizás el mayor invento de la humanidad: une a personas que nunca se conocieron, ciudadanos de épocas distantes. Los libros rompen las cadenas del tiempo. Un libro es la prueba de que los humanos son capaces de hacer magia.
 >
-> -- Carl Sagan, Cosmos, Part 11: The Persistence of Memory (1980)
+> -- Carl Sagan, Cosmos, Parte 11: La persistencia de la memoria (1980)
 
-## Books that I am reading, have read, or will read
+## Libros que estoy leyendo, he leído o leeré

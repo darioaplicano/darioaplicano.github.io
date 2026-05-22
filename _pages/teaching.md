@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Cursos y materiales formativos. Recursos publicos para aprender herramientas y metodologias relacionadas con datos.
+title: docencia
+description: Cursos y materiales formativos. Recursos públicos para aprender herramientas y metodologías relacionadas con datos.
 nav: true
 nav_order: 6
 ---

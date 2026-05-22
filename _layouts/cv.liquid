@@ -63,7 +63,7 @@ layout: default
         <!-- Header/Contact Information -->
         {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Informacion de contacto</h3>
+            <h3 class="card-title font-weight-medium">Información de contacto</h3>
             <table class="table table-cv table-sm table-borderless">
               {% if cv.name %}
                 <tr>
@@ -85,13 +85,13 @@ layout: default
               {% endif %}
               {% if cv.phone %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Telefono</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Teléfono</b></td>
                   <td class="p-1 pl-2 font-weight-light">{{ cv.phone }}</td>
                 </tr>
               {% endif %}
               {% if cv.address %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Ubicacion</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Ubicación</b></td>
                   <td class="p-1 pl-2 font-weight-light">
                     {% if cv.address.street %}{{ cv.address.street }}, {% endif %}
                     {% if cv.address.city %}{{ cv.address.city }}, {% endif %}
@@ -149,14 +149,14 @@ layout: default
 
           {% comment %} Map English section keys to Spanish display titles {% endcomment %}
           {% case section_title %}
-            {% when 'Education' %}{% assign section_display = 'Formacion' %}
+            {% when 'Education' %}{% assign section_display = 'Formación' %}
             {% when 'Awards' %}{% assign section_display = 'Reconocimientos' %}
             {% when 'Honors and Awards' %}{% assign section_display = 'Reconocimientos' %}
             {% when 'Publications' %}{% assign section_display = 'Publicaciones' %}
             {% when 'Skills' %}{% assign section_display = 'Habilidades' %}
             {% when 'Languages' %}{% assign section_display = 'Idiomas' %}
             {% when 'Interests' %}{% assign section_display = 'Intereses' %}
-            {% when 'Academic Interests' %}{% assign section_display = 'Intereses academicos' %}
+            {% when 'Academic Interests' %}{% assign section_display = 'Intereses académicos' %}
             {% when 'Certificates' %}{% assign section_display = 'Certificaciones' %}
             {% when 'Certifications' %}{% assign section_display = 'Certificaciones' %}
             {% when 'Projects' %}{% assign section_display = 'Proyectos' %}
