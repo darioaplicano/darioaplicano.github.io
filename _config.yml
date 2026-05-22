@@ -3,19 +3,20 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: You
-middle_name: R.
-last_name: Name
+first_name: Alex Dario
+middle_name:
+last_name: Flores Aplicano
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  La mejor forma de contactarme es via LinkedIn o email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  AIOps Engineer en Telefonica. Mas de 7 anos de experiencia en datos, Machine Learning,
+  IA Generativa, Big Data y Cloud. Apasionado por convertir problemas complejos en soluciones simples.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+keywords: AIOps, Machine Learning, IA Generativa, Python, Big Data, Cloud, Data Engineer
+lang: es # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://darioaplicano.github.io # the base hostname & protocol for your site
@@ -92,7 +93,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_description: Notas sobre AIOps, Machine Learning e IA Generativa
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -279,8 +280,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Flores Aplicano]
+  first_name: [Alex Dario, A. D.]
 
   style: apa
   locale: en
