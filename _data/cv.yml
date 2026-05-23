@@ -83,19 +83,15 @@ cv:
           - Machine Learning, Analisis de datos, Marketing Digital.
 
     Certifications:
-      - title: Power BI y Power Virtual Agents
-        authors:
-          - "Microsoft"
+      - name: Power BI y Power Virtual Agents
+        issuer: Microsoft
         date: 2025-04
-        awarder: Microsoft
-        summary: Certificacion oficial de Microsoft en Power BI y Power Virtual Agents.
+        icon: fa-solid fa-certificate
 
-      - title: Introduction to Data Modeling for Power BI
-        authors:
-          - "SQLBI"
+      - name: Introduction to Data Modeling for Power BI
+        issuer: SQLBI
         date: 2022-08
-        awarder: SQLBI
-        summary: Curso de modelado de datos para Power BI.
+        icon: fa-solid fa-certificate
 
     Skills:
       - name: Machine Learning & IA

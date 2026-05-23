@@ -63,17 +63,17 @@ layout: default
         <!-- Header/Contact Information -->
         {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Contact Information</h3>
+            <h3 class="card-title font-weight-medium">Informacion de contacto</h3>
             <table class="table table-cv table-sm table-borderless">
               {% if cv.name %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Name</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Nombre</b></td>
                   <td class="p-1 pl-2 font-weight-light">{{ cv.name }}</td>
                 </tr>
               {% endif %}
               {% if cv.label %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Professional Title</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Puesto</b></td>
                   <td class="p-1 pl-2 font-weight-light">{{ cv.label }}</td>
                 </tr>
               {% endif %}
@@ -85,13 +85,13 @@ layout: default
               {% endif %}
               {% if cv.phone %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Phone</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Telefono</b></td>
                   <td class="p-1 pl-2 font-weight-light">{{ cv.phone }}</td>
                 </tr>
               {% endif %}
               {% if cv.address %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Location</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Ubicacion</b></td>
                   <td class="p-1 pl-2 font-weight-light">
                     {% if cv.address.street %}{{ cv.address.street }}, {% endif %}
                     {% if cv.address.city %}{{ cv.address.city }}, {% endif %}
@@ -102,7 +102,7 @@ layout: default
               {% endif %}
               {% if cv.website %}
                 <tr>
-                  <td class="p-1 pr-2 font-weight-bold"><b>Website</b></td>
+                  <td class="p-1 pr-2 font-weight-bold"><b>Web</b></td>
                   <td class="p-1 pl-2 font-weight-light">
                     <a href="{{ cv.website }}" target="_blank">{{ cv.website }}</a>
                   </td>
@@ -115,7 +115,7 @@ layout: default
         <!-- Summary -->
         {% if cv.summary %}
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Professional Summary</h3>
+            <h3 class="card-title font-weight-medium">Resumen profesional</h3>
             <p>{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
           </div>
         {% endif %}
@@ -129,7 +129,7 @@ layout: default
         {% if combined_experience.size > 0 %}
           <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Experience</h3>
+            <h3 class="card-title font-weight-medium">Experiencia</h3>
             <div>
               {% assign entries = combined_experience %}
               {% include cv/experience.liquid %}
@@ -147,9 +147,27 @@ layout: default
             {% continue %}
           {% endif %}
 
+          {% comment %} Map English section keys to Spanish display titles {% endcomment %}
+          {% case section_title %}
+            {% when 'Education' %}{% assign section_display = 'Formacion' %}
+            {% when 'Awards' %}{% assign section_display = 'Reconocimientos' %}
+            {% when 'Honors and Awards' %}{% assign section_display = 'Reconocimientos' %}
+            {% when 'Publications' %}{% assign section_display = 'Publicaciones' %}
+            {% when 'Skills' %}{% assign section_display = 'Habilidades' %}
+            {% when 'Languages' %}{% assign section_display = 'Idiomas' %}
+            {% when 'Interests' %}{% assign section_display = 'Intereses' %}
+            {% when 'Academic Interests' %}{% assign section_display = 'Intereses academicos' %}
+            {% when 'Certificates' %}{% assign section_display = 'Certificaciones' %}
+            {% when 'Certifications' %}{% assign section_display = 'Certificaciones' %}
+            {% when 'Projects' %}{% assign section_display = 'Proyectos' %}
+            {% when 'Open Source Projects' %}{% assign section_display = 'Proyectos open source' %}
+            {% when 'References' %}{% assign section_display = 'Referencias' %}
+            {% else %}{% assign section_display = section_title %}
+          {% endcase %}
+
           <a class="anchor" id="{{ section_title | slugify }}"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ section_title }}</h3>
+            <h3 class="card-title font-weight-medium">{{ section_display }}</h3>
             <div>
               {% if section_title == 'Education' %}
                 {% assign entries = section_entries %}
@@ -169,7 +187,7 @@ layout: default
               {% elsif section_title == 'Interests' or section_title == 'Academic Interests' %}
                 {% assign entries = section_entries %}
                 {% include cv/interests.liquid %}
-              {% elsif section_title == 'Certificates' %}
+              {% elsif section_title == 'Certificates' or section_title == 'Certifications' %}
                 {% assign entries = section_entries %}
                 {% include cv/certificates.liquid %}
               {% elsif section_title == 'Projects' or section_title == 'Open Source Projects' %}
