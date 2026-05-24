@@ -1,28 +1,7 @@
+# GitHub user shown at the top of /repositories/.
+# The repo list below is no longer used: _pages/repositories.md ahora carga
+# todos los repos públicos (no-fork, no-archived) de este usuario vía la
+# GitHub API en cliente. Subes un repo nuevo a GitHub -> al refrescar la
+# página aparece. Edita aquí solo si quieres cambiar el usuario mostrado.
 github_users:
   - darioaplicano
-
-repo_description_lines_max: 2
-
-github_repos:
-  - darioaplicano/darioaplicano.github.io
-  - darioaplicano/Video2Text
-  - darioaplicano/Docker-Tools
-  - darioaplicano/adfa-utilities
-  - darioaplicano/ldap_module
-  - darioaplicano/data_visualization_bokeh_python
-  - darioaplicano/nds_malware_prediction
-  - darioaplicano/ALTEN_DS_PyDCaE
-  - darioaplicano/NDS_MDS
-  - darioaplicano/lrsChain
-  - darioaplicano/bnBreastCancer
-  - darioaplicano/rslp
-  - darioaplicano/scala_practicing
-  - darioaplicano/HTML2TXT
-  - darioaplicano/pyMark2HTML
-  - darioaplicano/pyScript
-  - darioaplicano/pyBros
-  - darioaplicano/home_platform
-  - darioaplicano/basic_jupyter
-  - darioaplicano/cesamo_Amapala
-  - darioaplicano/tead
-  - darioaplicano/cpme

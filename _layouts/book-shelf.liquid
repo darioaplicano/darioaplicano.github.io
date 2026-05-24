@@ -32,12 +32,22 @@ layout: page
             {% assign statuses = 'abandoned,finished,interested,paused,queued,reading,reread' | split: ',' %}
             {% assign status = item.status | downcase | strip %}
             {% if statuses contains status %}
-              <figcaption class="{{ status | downcase }}">{{ status | upcase }}</figcaption>
+              {% case status %}
+                {% when 'abandoned' %}{% assign status_label = 'ABANDONADO' %}
+                {% when 'finished' %}{% assign status_label = 'TERMINADO' %}
+                {% when 'interested' %}{% assign status_label = 'INTERESADO' %}
+                {% when 'paused' %}{% assign status_label = 'EN PAUSA' %}
+                {% when 'queued' %}{% assign status_label = 'EN COLA' %}
+                {% when 'reading' %}{% assign status_label = 'LEYENDO' %}
+                {% when 'reread' %}{% assign status_label = 'RELEYENDO' %}
+                {% else %}{% assign status_label = status | upcase %}
+              {% endcase %}
+              <figcaption class="{{ status }}">{{ status_label }}</figcaption>
             {% else %}
-              <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
+              <figcaption class="uncategorized">SIN CATEGORIA</figcaption>
             {% endif %}
           {% else %}
-            <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
+            <figcaption class="uncategorized">SIN CATEGORIA</figcaption>
           {% endif %}
         </a>
       </figure>

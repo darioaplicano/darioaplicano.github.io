@@ -2,9 +2,9 @@ cv:
   name: Alex Dario Flores Aplicano
   label: AIOps Engineer | Machine Learning & IA Generativa
   email: alexdario.flores@telefonica.com
-  location: Valladolid, Espana
+  location: Valladolid, España
   image: ""
-  summary: AI Operations Engineer en Telefonica con mas de 7 anos de experiencia en datos, Machine Learning, IA Generativa, Big Data y Cloud.
+  summary: AI Operations Engineer en Telefónica con más de 7 años de experiencia en datos, Machine Learning, IA Generativa, Big Data y Cloud.
 
   social_networks:
     - network: LinkedIn
@@ -14,73 +14,73 @@ cv:
 
   address:
     city: Valladolid
-    region: Castilla y Leon
+    region: Castilla y León
     countryCode: ES
 
   sections:
     Experience:
-      - company: Telefonica Innovacion Digital
+      - company: Telefónica Innovación Digital
         position: AI Operations Engineer & Analyst - Entertainment Services
-        location: Valladolid, Espana
+        location: Valladolid, España
         start_date: 2022-10
-        summary: Disenio e implementacion de soluciones basadas en ML e IA para monitorizar y optimizar servicios de video. Liderazgo del equipo AIOps.
+        summary: Diseño e implementación de soluciones basadas en ML e IA para monitorizar y optimizar servicios de video. Liderazgo del equipo AIOps.
         highlights:
-          - Deteccion de anomalias en servicios de streaming con modelos de Machine Learning.
-          - Desarrollo de herramientas de automatizacion para operaciones de red.
-          - Liderazgo de equipo tecnico multidisciplinar.
-          - Implementacion de soluciones de IA Generativa para asistencia en operaciones.
+          - Detección de anomalías en servicios de streaming con modelos de Machine Learning.
+          - Desarrollo de herramientas de automatización para operaciones de red.
+          - Liderazgo de equipo técnico multidisciplinar.
+          - Implementación de soluciones de IA Generativa para asistencia en operaciones.
 
       - company: Logicalis Spain
-        position: Cloud Solutions Engineer (proyecto para Orange Espana)
-        location: Madrid, Espana (En remoto)
+        position: Cloud Solutions Engineer (proyecto para Orange España)
+        location: Madrid, España (En remoto)
         start_date: 2022-03
         end_date: 2022-10
-        summary: Encargado de proyectos clave en colaboracion con Orange Espana.
+        summary: Encargado de proyectos clave en colaboración con Orange España.
         highlights:
-          - Gestion de proyectos de infraestructura cloud.
-          - Colaboracion directa con equipos de Orange Espana.
+          - Gestión de proyectos de infraestructura cloud.
+          - Colaboración directa con equipos de Orange España.
 
       - company: Ditech Group
         position: Big Data Engineer & Data Scientist
-        location: Valladolid, Espana (En remoto)
+        location: Valladolid, España (En remoto)
         start_date: 2020-03
         end_date: 2022-03
-        summary: Desarrollo de iniciativas de Machine Learning sobre Big Data utilizando Python como lenguaje de programacion principal. Proyectos para Telefonica, ALTEN SPAIN y Oesia.
+        summary: Desarrollo de iniciativas de Machine Learning sobre Big Data utilizando Python como lenguaje de programación principal. Proyectos para Telefónica, ALTEN SPAIN y Oesia.
         highlights:
           - Desarrollo de pipelines de datos en Apache Spark y PySpark.
-          - Construccion de modelos de ML para analisis predictivo.
-          - Certificacion Data Science con Python (ALTEN).
+          - Construcción de modelos de ML para análisis predictivo.
+          - Certificación Data Science con Python (ALTEN).
 
-      - company: Telefonica (Contrato de practicas)
+      - company: Telefónica (Contrato de prácticas)
         position: Data Engineer & Data Scientist
-        location: Valladolid, Espana
+        location: Valladolid, España
         start_date: 2019-03
         end_date: 2020-02
-        summary: Practicas en Fundacion Universidad-Empresa y Fundacion SEPI.
+        summary: Prácticas en Fundación Universidad-Empresa y Fundación SEPI.
         highlights:
-          - Procesamiento y analisis de grandes volumenes de datos.
+          - Procesamiento y análisis de grandes volúmenes de datos.
           - Desarrollo de modelos de Machine Learning.
 
     Education:
       - institution: Universidad de Valladolid
-        location: Valladolid, Espana
+        location: Valladolid, España
         url: https://www.uva.es/
         area: Big Data
-        studyType: Master en Ingenieria Informatica
+        studyType: Máster en Ingeniería Informática
         start_date: 2018
         end_date: 2020
         highlights:
           - Jupyter Notebook, Big Data Analytics, Machine Learning, Python.
-          - Trabajo Final sobre analisis de datos de admision universitaria.
+          - Trabajo Final sobre análisis de datos de admisión universitaria.
 
       - institution: Universidad Europea Miguel de Cervantes
-        location: Valladolid, Espana
+        location: Valladolid, España
         area: Big Data y Marketing Digital
-        studyType: Curso Universitario de Especializacion
+        studyType: Curso Universitario de Especialización
         start_date: 2020-03
         end_date: 2020-06
         highlights:
-          - Machine Learning, Analisis de datos, Marketing Digital.
+          - Machine Learning, Análisis de datos, Marketing Digital.
 
     Certifications:
       - name: Power BI y Power Virtual Agents
@@ -98,7 +98,7 @@ cv:
         keywords:
           - Machine Learning
           - IA Generativa (LLMs, RAG)
-          - Deteccion de anomalias
+          - Detección de anomalías
           - Scikit-learn
           - TensorFlow
 
@@ -113,13 +113,13 @@ cv:
 
       - name: Liderazgo
         keywords:
-          - Gestion de equipos tecnicos
-          - Metodologias agiles
+          - Gestión de equipos técnicos
+          - Metodologías ágiles
           - Mentoring
-          - Formacion tecnica
+          - Formación técnica
 
     Languages:
-      - language: Espanol
+      - language: Español
         fluency: Nativo
-      - language: Ingles
+      - language: Inglés
         fluency: Intermedio-avanzado
