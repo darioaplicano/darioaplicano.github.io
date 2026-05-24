@@ -3,8 +3,8 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-sobre-mi",
+    title: "sobre mi",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
@@ -16,75 +16,37 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "Publicaciones academicas, ordenadas por ano en orden descendente.",
+        },{id: "nav-publicaciones",
+          title: "publicaciones",
+          description: "Publicaciones academicas, ordenadas por año en orden descendente.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Perfil de GitHub y repos publicos. Codigo, ejercicios de cursos y proyectos personales en Python, Scala, TypeScript y mas.",
+        },{id: "nav-repositorios",
+          title: "repositorios",
+          description: "Perfil de GitHub y repos públicos. Código, ejercicios de cursos y proyectos personales en Python, Scala, TypeScript y más.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Curriculum profesional. Experiencia, formación, habilidades, certificaciones e idiomas.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Cursos y materiales formativos. Recursos publicos para aprender herramientas y metodologias relacionadas con datos.",
+        },{id: "nav-docencia",
+          title: "docencia",
+          description: "Cursos y materiales formativos. Recursos públicos para aprender herramientas y metodologías relacionadas con datos.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-        
-          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-          
-        },
-      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-        
-          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
-          
-        },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "teachings-influxdb-2-x-para-profesionales-de-datos",
+        },{id: "teachings-influxdb-2-x-para-profesionales-de-datos",
           title: 'InfluxDB 2.x para profesionales de datos',
-          description: "Curso disenado para profesionales de datos, mantenimiento y monitoreo industrial que necesitan trabajar con InfluxDB para gestionar grandes volumenes de datos en tiempo real.",
+          description: "Curso diseñado para profesionales de datos, mantenimiento y monitoreo industrial que necesitan trabajar con InfluxDB para gestionar grandes volúmenes de datos en tiempo real.",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/influxdb-2x/";
             },},{
