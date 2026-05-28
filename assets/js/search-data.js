@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-publicaciones",
-          title: "publicaciones",
-          description: "Publicaciones academicas, ordenadas por año en orden descendente.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-repositorios",
           title: "repositorios",
           description: "Perfil de GitHub y repos públicos. Código, ejercicios de cursos y proyectos personales en Python, Scala, TypeScript y más.",
