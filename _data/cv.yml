@@ -21,7 +21,7 @@ cv:
     Experience:
       - company: Telefónica España (TME)
         position: AI Operations Engineer & Analyst - Entertainment Services
-        location: Valladolid / Madrid, España
+        location: Valladolid / Madrid
         start_date: 2022-10
         summary: Diseño e implementación de soluciones basadas en ML, IA Generativa y agentes inteligentes para monitorizar y optimizar servicios de vídeo (Movistar Plus+ / Global Video Platform). Referente técnico del equipo AIOps.
         highlights:
@@ -32,7 +32,7 @@ cv:
 
       - company: Imagina Formación (Imagina Group)
         position: Formador Tecnológico & Creador de Contenidos Técnicos
-        location: Madrid / Remoto, España
+        location: Madrid (Remoto)
         start_date: 2024-06
         summary: Formación corporativa especializada (bonificada FUNDAE) y diseño curricular en tecnologías avanzadas.
         highlights:
@@ -42,7 +42,7 @@ cv:
 
       - company: Logicalis Spain
         position: Cloud Solutions Engineer (proyecto para Orange España)
-        location: Madrid, España (En remoto)
+        location: Madrid (Remoto)
         start_date: 2022-03
         end_date: 2022-10
         summary: Encargado de proyectos clave de infraestructura cloud y observabilidad en colaboración directa con Orange España.
@@ -52,7 +52,7 @@ cv:
 
       - company: Ditech Group
         position: Big Data Engineer & Data Scientist
-        location: Valladolid, España (En remoto)
+        location: Valladolid (Remoto)
         start_date: 2020-03
         end_date: 2022-03
         summary: Desarrollo de iniciativas de Machine Learning sobre Big Data utilizando Python como lenguaje principal para clientes como Telefónica, ALTEN SPAIN y Oesia.
@@ -63,7 +63,7 @@ cv:
 
       - company: Telefónica (Prácticas formativas)
         position: Data Engineer & Data Scientist
-        location: Boecillo (Valladolid), España
+        location: Valladolid, España
         start_date: 2019-03
         end_date: 2020-02
         summary: Prácticas formativas de postgrado a través de Fundación Universidad-Empresa (FUE) y Fundación SEPI en el centro de I+D de Telefónica.
