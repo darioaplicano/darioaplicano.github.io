@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "De Chatbots a Agentes: Arquitectura de Sistemas Agénticos en Producción con LangGraph y MCP"
-date: 2026-09-18 12:00:00
+date: 2026-09-18 08:00:00 +0200
 description: "Cómo evolucionar de simples flujos lineales de pregunta-respuesta a arquitecturas agénticas basadas en grafos de estado con LangGraph y herramientas desacopladas mediante el Model Context Protocol (MCP)."
 tags: [agentes-ia, langgraph, mcp, python, aiops]
 categories: [inteligencia-artificial, arquitectura]
