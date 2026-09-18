@@ -37,7 +37,7 @@ cv:
         summary: Formación corporativa especializada (bonificada FUNDAE) y diseño curricular en tecnologías avanzadas.
         highlights:
           - Impartición del curso especializado en InfluxDB 2.x (series temporales y lenguaje Flux).
-          - Diseño, guionización y grabación de 42 píldoras formativas sobre automatización con Make e integraciones de APIs y webhooks.
+          - En producción / desarrollo de serie formativa especializada sobre Make (42 píldoras modulares e integraciones de APIs y webhooks).
           - Evaluación y desarrollo curricular en IA Generativa, ClickHouse y observabilidad de sistemas.
 
       - company: Logicalis Spain
@@ -156,21 +156,37 @@ cv:
         location: Tegucigalpa, Honduras
         url: https://www.unah.edu.hn/
         area: Licenciatura en Matemáticas
-        studyType: Estudios universitarios simultáneos
+        studyType: Estudios universitarios (cursado simultáneo, no concluido)
         start_date: 2011
         end_date: 2018
         highlights:
-          - Formación analítica avanzada en álgebra, cálculo y estadística.
+          - Cursado en paralelo con Ingeniería en Sistemas hasta el traslado a España para estudios de Máster (2018).
+          - Sólida formación analítica en cálculo, álgebra y estadística que sirvió de base para la docencia universitaria en UNAH y UPH.
 
     Certifications:
-      - name: Power BI y Power Virtual Agents
+      - name: Microsoft Certified - Azure Fundamentals (AZ-900)
+        issuer: Microsoft
+        date: 2020-10
+        icon: fa-solid fa-certificate
+
+      - name: Power BI & Power Virtual Agents
         issuer: Microsoft
         date: 2025-04
         icon: fa-solid fa-certificate
 
-      - name: Introduction to Data Modeling for Power BI
-        issuer: SQLBI
-        date: 2022-08
+      - name: Curso de MCP para Agentes de IA (Claude, VSCode y Copilot)
+        issuer: Udemy (Telefónica)
+        date: 2026-06
+        icon: fa-solid fa-certificate
+
+      - name: Data Science con Python
+        issuer: ALTEN
+        date: 2021-06
+        icon: fa-solid fa-certificate
+
+      - name: Data Scientist with Python Track
+        issuer: DataCamp
+        date: 2021-05
         icon: fa-solid fa-certificate
 
     Skills:
