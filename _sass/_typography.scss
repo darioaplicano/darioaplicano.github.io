@@ -20,7 +20,10 @@ strong {
 }
 
 hr {
+  clear: both;
+  border: 0;
   border-top: 1px solid var(--global-divider-color);
+  margin: 2.5rem 0 2rem 0;
 }
 
 table {
