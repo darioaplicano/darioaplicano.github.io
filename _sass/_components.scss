@@ -97,6 +97,7 @@ ul.task-list input[type="checkbox"] {
       gap: 0.45rem;
       margin: 0.35rem 0;
       white-space: nowrap;
+      font-size: 0.82rem;
 
       i {
         color: var(--global-theme-color);
@@ -119,7 +120,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 240px;
+    width: 250px;
     max-width: 35%;
 
     .address {
@@ -342,20 +343,27 @@ ul.task-list input[type="checkbox"] {
   clear: both;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin: 1.5rem 0 2.5rem 0;
+  width: 100%;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .domain-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     background-color: var(--global-card-bg-color);
     border: 1px solid var(--global-divider-color);
     border-radius: 12px;
-    padding: 1.35rem;
+    padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:hover {
       border-color: var(--global-theme-color);
@@ -403,22 +411,27 @@ ul.task-list input[type="checkbox"] {
   clear: both;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin: 1.5rem 0 2.5rem 0;
+  width: 100%;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .project-feature-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     border: 1px solid var(--global-divider-color);
     border-radius: 12px;
-    padding: 1.35rem;
+    padding: 1.5rem;
     background-color: var(--global-card-bg-color);
     transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 
     &:hover {
       border-color: var(--global-theme-color);

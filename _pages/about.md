@@ -41,48 +41,40 @@ latest_posts:
 
 ### Áreas de especialización
 
-<div class="row domain-grid">
-  <div class="col-12 col-md-6 mb-4">
-    <div class="domain-card h-100">
-      <span class="domain-icon">🤖</span>
-      <h5>Sistemas Agénticos & IA Generativa</h5>
-      <p>Orquestación de agentes autónomos mediante grafos de estado (LangGraph), herramientas desacopladas con Model Context Protocol (MCP) y flujos Human-in-the-Loop listos para operar en producción.</p>
-      <div class="domain-tags">
-        <span>LangGraph</span><span>MCP</span><span>LLMs</span><span>RAG</span><span>Python</span>
-      </div>
+<div class="domain-grid">
+  <div class="domain-card">
+    <span class="domain-icon">🤖</span>
+    <h5>Sistemas Agénticos & IA Generativa</h5>
+    <p>Orquestación de agentes autónomos mediante grafos de estado (LangGraph), herramientas desacopladas con Model Context Protocol (MCP) y flujos Human-in-the-Loop listos para operar en producción.</p>
+    <div class="domain-tags">
+      <span>LangGraph</span><span>MCP</span><span>LLMs</span><span>RAG</span><span>Python</span>
     </div>
   </div>
 
-  <div class="col-12 col-md-6 mb-4">
-    <div class="domain-card h-100">
-      <span class="domain-icon">📡</span>
-      <h5>AIOps & Observabilidad en Tiempo Real</h5>
-      <p>Monitorización y diagnóstico predictivo para plataformas de vídeo en streaming. Detección estadística de anomalías, correlación de telemetría distribuida y reducción de tiempos de restauración (MTTR).</p>
-      <div class="domain-tags">
-        <span>AIOps</span><span>Streaming</span><span>Detección de anomalías</span><span>SLAs</span>
-      </div>
+  <div class="domain-card">
+    <span class="domain-icon">📡</span>
+    <h5>AIOps & Observabilidad en Tiempo Real</h5>
+    <p>Monitorización y diagnóstico predictivo para plataformas de vídeo en streaming. Detección estadística de anomalías, correlación de telemetría distribuida y reducción de tiempos de restauración (MTTR).</p>
+    <div class="domain-tags">
+      <span>AIOps</span><span>Streaming</span><span>Detección de anomalías</span><span>SLAs</span>
     </div>
   </div>
 
-  <div class="col-12 col-md-6 mb-4">
-    <div class="domain-card h-100">
-      <span class="domain-icon">⚡</span>
-      <h5>Data Engineering & Plataformas Analíticas</h5>
-      <p>Arquitectura y consumo analítico a gran escala. Consultas ultrarrápidas sobre ClickHouse, tratamiento de series temporales en InfluxDB y pipelines de procesamiento con Apache Spark, SQL y Airflow.</p>
-      <div class="domain-tags">
-        <span>ClickHouse</span><span>Apache Spark</span><span>SQL</span><span>InfluxDB</span><span>Cloud</span>
-      </div>
+  <div class="domain-card">
+    <span class="domain-icon">⚡</span>
+    <h5>Data Engineering & Plataformas Analíticas</h5>
+    <p>Arquitectura y consumo analítico a gran escala. Consultas ultrarrápidas sobre ClickHouse, tratamiento de series temporales en InfluxDB y pipelines de procesamiento con Apache Spark, SQL y Airflow.</p>
+    <div class="domain-tags">
+      <span>ClickHouse</span><span>Apache Spark</span><span>SQL</span><span>InfluxDB</span><span>Cloud</span>
     </div>
   </div>
 
-  <div class="col-12 col-md-6 mb-4">
-    <div class="domain-card h-100">
-      <span class="domain-icon">🔄</span>
-      <h5>Automatización Operativa & Docencia</h5>
-      <p>Diseño de escenarios avanzados de integración de APIs y webhooks con Make para eliminar tareas repetitivas. Formación corporativa especializada a equipos técnicos en empresas.</p>
-      <div class="domain-tags">
-        <span>Make</span><span>APIs REST</span><span>Webhooks</span><span>Imagina</span>
-      </div>
+  <div class="domain-card">
+    <span class="domain-icon">🔄</span>
+    <h5>Automatización Operativa & Docencia</h5>
+    <p>Diseño de escenarios avanzados de integración de APIs y webhooks con Make para eliminar tareas repetitivas. Formación corporativa especializada a equipos técnicos en empresas.</p>
+    <div class="domain-tags">
+      <span>Make</span><span>APIs REST</span><span>Webhooks</span><span>Imagina</span>
     </div>
   </div>
 </div>
@@ -91,40 +83,34 @@ latest_posts:
 
 ### Proyectos y recursos destacados
 
-<div class="row featured-projects">
-  <div class="col-12 col-lg-4 mb-3">
-    <div class="project-feature-card h-100">
-      <div class="project-header">
-        <h5><a href="/blog/2026/de-chatbots-a-agentes-langgraph-mcp/">De Chatbots a Agentes en Producción</a></h5>
-        <p>Artículo técnico de arquitectura: cómo evolucionar de cadenas conversacionales lineales a grafos de estado con LangGraph y herramientas desacopladas mediante MCP.</p>
-      </div>
-      <div class="project-footer">
-        <a href="/blog/2026/de-chatbots-a-agentes-langgraph-mcp/">Leer artículo &rarr;</a>
-      </div>
+<div class="featured-projects">
+  <div class="project-feature-card">
+    <div class="project-header">
+      <h5><a href="/blog/2026/de-chatbots-a-agentes-langgraph-mcp/">De Chatbots a Agentes en Producción</a></h5>
+      <p>Artículo técnico de arquitectura: cómo evolucionar de cadenas conversacionales lineales a grafos de estado con LangGraph y herramientas desacopladas mediante MCP.</p>
+    </div>
+    <div class="project-footer">
+      <a href="/blog/2026/de-chatbots-a-agentes-langgraph-mcp/">Leer artículo &rarr;</a>
     </div>
   </div>
 
-  <div class="col-12 col-lg-4 mb-3">
-    <div class="project-feature-card h-100">
-      <div class="project-header">
-        <h5><a href="https://darioaplicano.gitbook.io/influxdb2.x" target="_blank" rel="noopener noreferrer">InfluxDB 2.x para Profesionales de Datos</a></h5>
-        <p>Manual técnico y curso práctico de libre acceso en GitBook para el almacenamiento, consulta con Flux y visualización de series temporales a escala.</p>
-      </div>
-      <div class="project-footer">
-        <a href="https://darioaplicano.gitbook.io/influxdb2.x" target="_blank" rel="noopener noreferrer">Abrir en GitBook &rarr;</a>
-      </div>
+  <div class="project-feature-card">
+    <div class="project-header">
+      <h5><a href="https://darioaplicano.gitbook.io/influxdb2.x" target="_blank" rel="noopener noreferrer">InfluxDB 2.x para Profesionales de Datos</a></h5>
+      <p>Manual técnico y curso práctico de libre acceso en GitBook para el almacenamiento, consulta con Flux y visualización de series temporales a escala.</p>
+    </div>
+    <div class="project-footer">
+      <a href="https://darioaplicano.gitbook.io/influxdb2.x" target="_blank" rel="noopener noreferrer">Abrir en GitBook &rarr;</a>
     </div>
   </div>
 
-  <div class="col-12 col-lg-4 mb-3">
-    <div class="project-feature-card h-100">
-      <div class="project-header">
-        <h5><a href="/teaching/">Formación y Cursos Técnicos</a></h5>
-        <p>Catálogo de formaciones impartidas en automatización con Make (Imagina Formación) y experiencia previa en docencia universitaria en ciencias cuantitativas.</p>
-      </div>
-      <div class="project-footer">
-        <a href="/teaching/">Ver cursos &rarr;</a>
-      </div>
+  <div class="project-feature-card">
+    <div class="project-header">
+      <h5><a href="/teaching/">Formación y Cursos Técnicos</a></h5>
+      <p>Catálogo de formaciones impartidas en automatización con Make (Imagina Formación) y experiencia previa en docencia universitaria en ciencias cuantitativas.</p>
+    </div>
+    <div class="project-footer">
+      <a href="/teaching/">Ver cursos &rarr;</a>
     </div>
   </div>
 </div>
