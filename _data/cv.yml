@@ -4,7 +4,7 @@ cv:
   email: alexdario.flores@telefonica.com
   location: Valladolid, España
   image: ""
-  summary: AI Operations Engineer en Telefónica con más de 7 años de experiencia en datos, Machine Learning, IA Generativa, Big Data y Cloud.
+  summary: AI Operations Engineer en Telefónica con más de 10 años de experiencia en datos, Machine Learning, IA Generativa, Big Data y Cloud.
 
   social_networks:
     - network: LinkedIn
@@ -19,47 +19,105 @@ cv:
 
   sections:
     Experience:
-      - company: Telefónica Innovación Digital
+      - company: Telefónica España (TME)
         position: AI Operations Engineer & Analyst - Entertainment Services
-        location: Valladolid, España
+        location: Valladolid / Madrid, España
         start_date: 2022-10
-        summary: Diseño e implementación de soluciones basadas en ML e IA para monitorizar y optimizar servicios de video. Liderazgo del equipo AIOps.
+        summary: Diseño e implementación de soluciones basadas en ML, IA Generativa y agentes inteligentes para monitorizar y optimizar servicios de vídeo (Movistar Plus+ / Global Video Platform). Referente técnico del equipo AIOps.
         highlights:
-          - Detección de anomalías en servicios de streaming con modelos de Machine Learning.
-          - Desarrollo de herramientas de automatización para operaciones de red.
-          - Liderazgo de equipo técnico multidisciplinar.
-          - Implementación de soluciones de IA Generativa para asistencia en operaciones.
+          - Detección de anomalías en streaming y televisión mediante modelos de ML y observabilidad E2E.
+          - Desarrollo e implantación de agentes inteligentes y herramientas de automatización operativa.
+          - Arquitectura de ingesta y análisis en tiempo real sobre ClickHouse, Airflow y MQTT.
+          - Evolución de la entidad jurídica: Telefónica I+D (hasta 2023), Telefónica Innovación Digital (hasta 2026) y Telefónica Móviles España / TME (desde jul. 2026).
+
+      - company: Imagina Formación (Imagina Group)
+        position: Formador Tecnológico & Creador de Contenidos Técnicos
+        location: Madrid / Remoto, España
+        start_date: 2024-06
+        summary: Formación corporativa especializada (bonificada FUNDAE) y diseño curricular en tecnologías avanzadas.
+        highlights:
+          - Impartición del curso especializado en InfluxDB 2.x (series temporales y lenguaje Flux).
+          - Diseño, guionización y grabación de 42 píldoras formativas sobre automatización con Make e integraciones de APIs y webhooks.
+          - Evaluación y desarrollo curricular en IA Generativa, ClickHouse y observabilidad de sistemas.
 
       - company: Logicalis Spain
         position: Cloud Solutions Engineer (proyecto para Orange España)
         location: Madrid, España (En remoto)
         start_date: 2022-03
         end_date: 2022-10
-        summary: Encargado de proyectos clave en colaboración con Orange España.
+        summary: Encargado de proyectos clave de infraestructura cloud y observabilidad en colaboración directa con Orange España.
         highlights:
-          - Gestión de proyectos de infraestructura cloud.
-          - Colaboración directa con equipos de Orange España.
+          - Gestión y monitorización de proyectos de infraestructura cloud.
+          - Colaboración y soporte técnico directo a equipos de Orange España.
 
       - company: Ditech Group
         position: Big Data Engineer & Data Scientist
         location: Valladolid, España (En remoto)
         start_date: 2020-03
         end_date: 2022-03
-        summary: Desarrollo de iniciativas de Machine Learning sobre Big Data utilizando Python como lenguaje de programación principal. Proyectos para Telefónica, ALTEN SPAIN y Oesia.
+        summary: Desarrollo de iniciativas de Machine Learning sobre Big Data utilizando Python como lenguaje principal para clientes como Telefónica, ALTEN SPAIN y Oesia.
         highlights:
-          - Desarrollo de pipelines de datos en Apache Spark y PySpark.
-          - Construcción de modelos de ML para análisis predictivo.
+          - Desarrollo de pipelines de datos masivos en Apache Spark y PySpark.
+          - Construcción de modelos de ML para análisis predictivo y clasificación.
           - Certificación Data Science con Python (ALTEN).
 
-      - company: Telefónica (Contrato de prácticas)
+      - company: Telefónica (Prácticas formativas)
         position: Data Engineer & Data Scientist
-        location: Valladolid, España
+        location: Boecillo (Valladolid), España
         start_date: 2019-03
         end_date: 2020-02
-        summary: Prácticas en Fundación Universidad-Empresa y Fundación SEPI.
+        summary: Prácticas formativas de postgrado a través de Fundación Universidad-Empresa (FUE) y Fundación SEPI en el centro de I+D de Telefónica.
         highlights:
-          - Procesamiento y análisis de grandes volúmenes de datos.
-          - Desarrollo de modelos de Machine Learning.
+          - Procesamiento y análisis exploratorio de grandes volúmenes de datos.
+          - Desarrollo de modelos de Machine Learning aplicados a operaciones.
+
+      - company: Universidad Politécnica de Honduras (UPH)
+        position: Docente de Cátedra de Cálculo (Cálculo I y II)
+        location: Choluteca, Honduras
+        start_date: 2018-01
+        end_date: 2018-08
+        summary: Docencia universitaria de Cálculo Diferencial e Integral en el Departamento de Matemáticas para estudiantes de ingeniería.
+        highlights:
+          - Impartición de clases presenciales de Cálculo I y Cálculo II.
+          - Preparación y evaluación de programas académicos departamentales.
+
+      - company: UNAH - CURLP
+        position: Profesor Universitario & Coordinador de Tutorías entre Pares
+        location: Choluteca, Honduras
+        start_date: 2017-01
+        end_date: 2018-09
+        summary: Docencia universitaria en ciencias y comercio internacional, y coordinación académica del programa institucional de tutorías.
+        highlights:
+          - Cátedras de Cálculo I, Cálculo II, Informática, Pre-cálculo y Bioestadística.
+          - Coordinación y mentoría en el programa institucional de Tutorías entre Pares.
+
+      - company: IUDPAS - UNAH
+        position: Coordinador Departamental de Observación Electoral
+        location: Choluteca, Honduras
+        start_date: 2017-09
+        end_date: 2017-12
+        summary: Coordinación de observación técnica sistemática en las Elecciones Generales de Honduras y análisis cuantitativo de datos.
+        highlights:
+          - Reclutamiento, capacitación técnica y despliegue de observadores de datos en campo.
+          - Procesamiento y análisis estadístico de incidencias electorales.
+
+      - company: Vicerrectoría Académica (VRA - UNAH)
+        position: Analista de Bases de Datos
+        location: Tegucigalpa, Honduras
+        start_date: 2016-06
+        end_date: 2016-10
+        summary: Analista de datos en el Proyecto de Autoevaluación Institucional para Acreditación Internacional Universitaria.
+        highlights:
+          - Extracción, modelado y consultas complejas en SQL sobre indicadores de calidad universitaria.
+
+      - company: ICON S. de R.L.
+        position: Analista / Programador Web
+        location: Tegucigalpa, Honduras
+        start_date: 2015-11
+        end_date: 2016-06
+        summary: Desarrollo de sistemas de información web y soporte a plataformas de facturación empresarial.
+        highlights:
+          - Desarrollo en tecnologías LAMP y Bootstrap para plataformas de gestión.
 
     Education:
       - institution: Universidad de Valladolid
@@ -70,8 +128,9 @@ cv:
         start_date: 2018
         end_date: 2020
         highlights:
-          - Jupyter Notebook, Big Data Analytics, Machine Learning, Python.
-          - Trabajo Final sobre análisis de datos de admisión universitaria.
+          - Beca Santander Iberoamérica + Asia.
+          - Especialización en Big Data Analytics, Machine Learning y arquitecturas distribuidas.
+          - Trabajo Final de Máster sobre análisis de datos de admisión universitaria.
 
       - institution: Universidad Europea Miguel de Cervantes
         location: Valladolid, España
@@ -80,7 +139,28 @@ cv:
         start_date: 2020-03
         end_date: 2020-06
         highlights:
-          - Machine Learning, Análisis de datos, Marketing Digital.
+          - Machine Learning, Análisis de datos y Marketing Digital.
+
+      - institution: Universidad Nacional Autónoma de Honduras (UNAH)
+        location: Tegucigalpa, Honduras
+        url: https://www.unah.edu.hn/
+        area: Ingeniería en Sistemas
+        studyType: Grado Universitario (Graduado CUM LAUDE)
+        start_date: 2011
+        end_date: 2016
+        highlights:
+          - Graduación con honores de excelencia académica (Cum Laude).
+          - Especialización en ingeniería de software, bases de datos y algoritmos.
+
+      - institution: Universidad Nacional Autónoma de Honduras (UNAH)
+        location: Tegucigalpa, Honduras
+        url: https://www.unah.edu.hn/
+        area: Licenciatura en Matemáticas
+        studyType: Estudios universitarios simultáneos
+        start_date: 2011
+        end_date: 2018
+        highlights:
+          - Formación analítica avanzada en álgebra, cálculo y estadística.
 
     Certifications:
       - name: Power BI y Power Virtual Agents
@@ -98,6 +178,8 @@ cv:
         keywords:
           - Machine Learning
           - IA Generativa (LLMs, RAG)
+          - Agentes Inteligentes (LangChain, LangGraph)
+          - Model Context Protocol (MCP)
           - Detección de anomalías
           - Scikit-learn
           - TensorFlow
@@ -108,15 +190,27 @@ cv:
           - PySpark
           - Apache Spark
           - SQL
+          - ClickHouse
+          - InfluxDB
+          - Airflow
           - AWS
           - Azure
+          - MQTT
 
-      - name: Liderazgo
+      - name: Automatización & No-Code
+        keywords:
+          - Make
+          - Webhooks
+          - Integración de APIs
+          - Automatización operativa
+
+      - name: Liderazgo y Docencia
         keywords:
           - Gestión de equipos técnicos
+          - Formación técnica corporativa
+          - Docencia universitaria
           - Metodologías ágiles
           - Mentoring
-          - Formación técnica
 
     Languages:
       - language: Español
