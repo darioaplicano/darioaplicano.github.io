@@ -9,8 +9,8 @@ profile:
   image: https://github.com/darioaplicano.png?size=460
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Valladolid, Castilla y León, España</p>
-    <p>alexdario.flores@telefonica.com</p>
+    <p class="profile-item"><i class="fa-solid fa-location-dot"></i> Valladolid, España</p>
+    <p class="profile-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:alexdario.flores@telefonica.com">alexdario.flores@telefonica.com</a></p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
