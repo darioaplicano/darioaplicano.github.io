@@ -1,17 +1,17 @@
 ---
 layout: course
 title: Automatización de Procesos e Integración de APIs con Make
-description: Creación de escenarios avanzados de automatización, webhooks, transformación estructurada de datos y conexión de sistemas e IA con Make (Integromat).
+description: Creación de escenarios avanzados de automatización, webhooks, transformación estructurada de datos y conexión de sistemas e IA con Make (en desarrollo para Imagina Formación).
 instructor: Alex Dario Flores Aplicano
-year: 2025
-term: Online
+year: 2026
+term: En producción
 location: Imagina Formación
 course_id: make-automatizaciones
 ---
 
 ## Sobre la formación
 
-Módulos y píldoras formativas orientadas a la **automatización operativa de procesos empresariales** mediante **Make**. El temario cubre desde el diseño de flujos modulares y consumo de REST APIs hasta la conexión de modelos de IA Generativa y webhooks en tiempo real.
+Serie de módulos y píldoras formativas (en fase de desarrollo y producción) orientadas a la **automatización operativa de procesos empresariales** mediante **Make**. El temario cubre desde el diseño de flujos modulares y consumo de REST APIs hasta la conexión de modelos de IA Generativa y webhooks en tiempo real.
 
 ## Contenidos clave
 
