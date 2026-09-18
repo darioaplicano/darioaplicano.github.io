@@ -341,9 +341,13 @@ ul.task-list input[type="checkbox"] {
 .domain-grid {
   clear: both;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   margin: 1.5rem 0 2.5rem 0;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .domain-card {
     background-color: var(--global-card-bg-color);
@@ -396,10 +400,15 @@ ul.task-list input[type="checkbox"] {
 }
 
 .featured-projects {
+  clear: both;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   margin: 1.5rem 0 2.5rem 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .project-feature-card {
     border: 1px solid var(--global-divider-color);
