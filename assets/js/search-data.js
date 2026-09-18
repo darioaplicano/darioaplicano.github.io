@@ -48,11 +48,21 @@ ninja.data = [{
             window.location.href = "/blog/2026/de-chatbots-a-agentes-langgraph-mcp/";
           
         },
-      },{id: "teachings-influxdb-2-x-para-profesionales-de-datos",
+      },{id: "teachings-docencia-universitaria-en-matemáticas-e-informática",
+          title: 'Docencia Universitaria en Matemáticas e Informática',
+          description: "Cátedras de Cálculo Diferencial e Integral, Informática y Bioestadística. Coordinación institucional del programa de Tutorías entre Pares en ciencias exactas.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/docencia-universitaria/";
+            },},{id: "teachings-influxdb-2-x-para-profesionales-de-datos",
           title: 'InfluxDB 2.x para profesionales de datos',
           description: "Curso diseñado para profesionales de datos, mantenimiento y monitoreo industrial que necesitan trabajar con InfluxDB para gestionar grandes volúmenes de datos en tiempo real.",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/influxdb-2x/";
+            },},{id: "teachings-automatización-de-procesos-e-integración-de-apis-con-make",
+          title: 'Automatización de Procesos e Integración de APIs con Make',
+          description: "Creación de escenarios avanzados de automatización, webhooks, transformación estructurada de datos y conexión de sistemas e IA con Make (Integromat).",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/make-automatizaciones/";
             },},{
         id: 'social-email',
         title: 'email',
