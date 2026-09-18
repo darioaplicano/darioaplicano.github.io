@@ -48,17 +48,6 @@ ninja.data = [{
             window.location.href = "/blog/2026/de-chatbots-a-agentes-langgraph-mcp/";
           
         },
-      },{id: "post-hola-mundo",
-        
-          title: "Hola mundo",
-        
-        description: "Primera entrada del blog. Pronto compartire aquí notas sobre AIOps, Machine Learning e IA Generativa.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/hola/";
-          
-        },
       },{id: "teachings-influxdb-2-x-para-profesionales-de-datos",
           title: 'InfluxDB 2.x para profesionales de datos',
           description: "Curso diseñado para profesionales de datos, mantenimiento y monitoreo industrial que necesitan trabajar con InfluxDB para gestionar grandes volúmenes de datos en tiempo real.",
