@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-hola-mundo",
+        },{id: "post-de-chatbots-a-agentes-arquitectura-de-sistemas-agénticos-en-producción-con-langgraph-y-mcp",
+        
+          title: "De Chatbots a Agentes: Arquitectura de Sistemas Agénticos en Producción con LangGraph y...",
+        
+        description: "Cómo evolucionar de simples flujos lineales de pregunta-respuesta a arquitecturas agénticas basadas en grafos de estado con LangGraph y herramientas desacopladas mediante el Model Context Protocol (MCP).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/de-chatbots-a-agentes-langgraph-mcp/";
+          
+        },
+      },{id: "post-hola-mundo",
         
           title: "Hola mundo",
         
