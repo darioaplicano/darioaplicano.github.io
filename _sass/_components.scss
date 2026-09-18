@@ -57,30 +57,68 @@ ul.task-list input[type="checkbox"] {
 
 .profile {
   width: 100%;
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid var(--global-card-bg-color);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
 
   .more-info {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-family: monospace;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--global-text-color-light);
 
     p {
-      display: inline-block;
-      margin: 0;
+      display: block;
+      margin: 0.25rem 0;
+      word-break: break-word;
+    }
+
+    a {
+      color: var(--global-text-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-theme-color);
+        text-decoration: underline;
+      }
+    }
+
+    .profile-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      margin: 0.25rem 0;
+
+      i {
+        color: var(--global-theme-color);
+        font-size: 0.8rem;
+      }
     }
   }
 }
 
 .profile.float-right {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .profile.float-left {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 220px;
+    max-width: 32%;
 
     .address {
       p {
