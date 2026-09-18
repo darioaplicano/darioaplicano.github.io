@@ -212,8 +212,30 @@ cv:
           - Metodologías ágiles
           - Mentoring
 
+    Projects:
+      - name: Arquitectura Agéntica de Observabilidad y Telemetría
+        url: https://darioaplicano.com/blog/2026/de-chatbots-a-agentes-langgraph-mcp/
+        summary: Diseño e implementación de agentes autónomos para diagnóstico y observabilidad de servicios de vídeo en tiempo real utilizando grafos de estado (LangGraph) y herramientas tipadas desacopladas con Model Context Protocol (MCP).
+        highlights:
+          - Integración con bases de datos analíticas (ClickHouse) y fuentes de telemetría operativa.
+          - Flujos Human-in-the-Loop para remediación segura y tolerancia a fallos mediante checkpointing de estado.
+
+      - name: InfluxDB 2.x para Profesionales de Datos
+        url: https://darioaplicano.gitbook.io/influxdb2.x
+        summary: Guía técnica y curso práctico de referencia para el almacenamiento, consulta con Flux y visualización de series temporales a escala industrial.
+        highlights:
+          - Publicado y accesible en GitBook para la comunidad de ingeniería de datos e IoT.
+          - Casos prácticos de ingesta de alto rendimiento y agregaciones temporales continuas.
+
+      - name: Automatización Operativa y Flujos No-Code Empresariales
+        summary: Orquestación de flujos de automatización mediante webhooks, REST APIs y Make, conectando plataformas cloud, herramientas de soporte y mensajería corporativa.
+        highlights:
+          - Reducción drástica de tareas manuales repetitivas en procesos operativos y de supervisión.
+          - Integración de modelos LLM para triaje, clasificación de eventos y resúmenes ejecutivos.
+
     Languages:
       - language: Español
         fluency: Nativo
       - language: Inglés
         fluency: Intermedio-avanzado
+
