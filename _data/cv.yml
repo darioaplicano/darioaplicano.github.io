@@ -164,11 +164,6 @@ cv:
           - Sólida formación analítica en cálculo, álgebra y estadística que sirvió de base para la docencia universitaria en UNAH y UPH.
 
     Certifications:
-      - name: Microsoft Certified - Azure Fundamentals (AZ-900)
-        issuer: Microsoft
-        date: 2020-10
-        icon: fa-solid fa-certificate
-
       - name: Power BI & Power Virtual Agents
         issuer: Microsoft
         date: 2025-04
