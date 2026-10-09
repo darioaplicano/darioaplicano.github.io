@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-de-chatbots-a-agentes-arquitectura-de-sistemas-agénticos-en-producción-con-langgraph-y-mcp",
+        },{id: "post-portabilidad-multi-agente-cómo-diseñar-un-entorno-de-trabajo-independiente-del-llm-y-de-la-cli",
+        
+          title: "Portabilidad multi-agente: cómo diseñar un entorno de trabajo independiente del LLM y de...",
+        
+        description: "Por qué acoplar tus flujos a un único asistente de IA es un riesgo operativo y cómo desacoplar el modelo, el harness y las herramientas para evitar el vendor lock-in.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/portabilidad-multi-agente-arquitectura-sin-lock-in/";
+          
+        },
+      },{id: "post-de-chatbots-a-agentes-arquitectura-de-sistemas-agénticos-en-producción-con-langgraph-y-mcp",
         
           title: "De Chatbots a Agentes: Arquitectura de Sistemas Agénticos en Producción con LangGraph y...",
         
