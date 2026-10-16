@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-portabilidad-multi-agente-cómo-diseñar-un-entorno-de-trabajo-independiente-del-llm-y-de-la-cli",
+        },{id: "post-auto-evaluación-y-benchmarking-de-sistemas-rag-test-sets-sintéticos-y-métricas-sin-ground-truth-humano",
+        
+          title: "Auto-evaluación y Benchmarking de Sistemas RAG: Test Sets Sintéticos y Métricas sin «Ground...",
+        
+        description: "Cómo romper el cuello de botella de la validación manual en RAG utilizando generación sintética de tests con RAGAS y Azure AI Foundry para detectar regresiones en CI/CD sin esperar a un dataset humano.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/auto-evaluacion-rag-test-sets-sinteticos/";
+          
+        },
+      },{id: "post-portabilidad-multi-agente-cómo-diseñar-un-entorno-de-trabajo-independiente-del-llm-y-de-la-cli",
         
           title: "Portabilidad multi-agente: cómo diseñar un entorno de trabajo independiente del LLM y de...",
         
