@@ -86,7 +86,7 @@ openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX
 umami_analytics: 8a06ad8f-dc56-45af-84a3-b6a9b3947477 # your Umami analytics website ID
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
-google_site_verification: # your google-site-verification ID (Google Search Console)
+google_site_verification: zmt2CvBbox4wpNUQPUP_4pwJ2eSo8ruk4-FafsIC53I # your google-site-verification ID (Google Search Console)
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
@@ -292,7 +292,7 @@ enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
 enable_umami_analytics: true # enables Umami analytics (https://umami.is/)
-enable_google_verification: false # enables google site verification
+enable_google_verification: true # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (https://github.com/orestbida/cookieconsent)
 enable_masonry: true # enables automatic project cards arrangement
