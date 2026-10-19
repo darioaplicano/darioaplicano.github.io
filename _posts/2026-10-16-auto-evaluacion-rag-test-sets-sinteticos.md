@@ -165,13 +165,13 @@ relevance_eval = RelevanceEvaluator(model_config)
 
 # Evaluación puntual de una inferencia
 resultado_groundedness = groundedness_eval(
-    response="Para reiniciar el servicio hdp-13 ejecute systemctl restart ipg-service.",
-    context="Procedimiento de mantenimiento: el servicio ipg-service en hdp-13 se reinicia mediante systemctl restart ipg-service."
+    response="Para reiniciar el servicio de pagos en el nodo worker-01 ejecute systemctl restart payment-service.",
+    context="Procedimiento de mantenimiento: el servicio payment-service en worker-01 se reinicia mediante systemctl restart payment-service."
 )
 
 resultado_relevance = relevance_eval(
-    query="¿Cómo reinicio el nodo hdp-13?",
-    response="Para reiniciar el servicio hdp-13 ejecute systemctl restart ipg-service."
+    query="¿Cómo reinicio el servicio en el nodo worker-01?",
+    response="Para reiniciar el servicio de pagos en el nodo worker-01 ejecute systemctl restart payment-service."
 )
 
 print(f"Groundedness: {resultado_groundedness['groundedness']} / 5")
