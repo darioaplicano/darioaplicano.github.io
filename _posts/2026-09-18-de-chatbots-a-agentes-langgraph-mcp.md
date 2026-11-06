@@ -142,7 +142,6 @@ Con **LangGraph** para gobernar el flujo mediante grafos de estado y **MCP** par
 
 ## Para seguir leyendo
 
-Este artículo es la entrada a una serie sobre agentes en producción. Los siguientes profundizan en piezas concretas:
+Este artículo es la entrada a una serie sobre agentes en producción. Para profundizar en una pieza concreta:
 
 - [Portabilidad multi-agente]({% post_url 2026-10-09-portabilidad-multi-agente-arquitectura-sin-lock-in %}): cómo usar MCP y otras piezas para no atarte a un modelo ni a una herramienta.
-- [Modelos locales y open-weights para agentes de código]({% post_url 2026-10-27-modelos-locales-agentes-codigo %}): por qué la fiabilidad del tool-calling pesa más que los benchmarks.
