@@ -1,37 +1,46 @@
-let mermaidTheme = determineComputedTheme();
+/* Mermaid: one render per page, without zoom or pan.
+   - The source code block stays hidden (.unloaded) and is reused to re-render when the
+     light/dark theme changes (setMermaidTheme in theme.js).
+   - Rendering waits for the fonts: measuring with fallback fonts leaves the diagram
+     offset and cut off inside its box.
+   - No d3 zoom: wrapping the rendered SVG broke its viewBox and let the diagram be dragged
+     out of the box. */
+let mermaidThemeName = (theme) => (theme == "light" ? "default" : theme);
 
-/* Create mermaid diagram as another node and hide the code block, appending the mermaid node after it
-    this is done to enable retrieving the code again when changing theme between light/dark */
-document.addEventListener("readystatechange", () => {
-  if (document.readyState === "complete") {
-    document.querySelectorAll("pre>code.language-mermaid").forEach((elem) => {
-      const svgCode = elem.textContent;
-      const backup = elem.parentElement;
-      backup.classList.add("unloaded");
-      /* create mermaid node */
-      let mermaid = document.createElement("pre");
-      mermaid.classList.add("mermaid");
-      const text = document.createTextNode(svgCode);
-      mermaid.appendChild(text);
-      backup.after(mermaid);
-    });
+/* Mermaid 10 sometimes computes the viewBox before the nodes are in place and leaves it shifted,
+   so part of the diagram falls outside the box. After each render, the viewBox is recomputed
+   from what was actually drawn. */
+let fitMermaidSvgs = () => {
+  const pad = 8;
+  document.querySelectorAll(".mermaid svg").forEach((svg) => {
+    const bb = svg.getBBox();
+    if (!bb.width || !bb.height) return;
+    const w = bb.width + 2 * pad;
+    svg.setAttribute("viewBox", `${bb.x - pad} ${bb.y - pad} ${w} ${bb.height + 2 * pad}`);
+    svg.style.maxWidth = `${w}px`;
+    svg.removeAttribute("height");
+  });
+};
 
-    mermaid.initialize({ theme: mermaidTheme });
+document.addEventListener("readystatechange", async () => {
+  if (document.readyState !== "complete") return;
 
-    /* Zoomable mermaid diagrams */
-    if (typeof d3 !== "undefined") {
-      window.addEventListener("load", function () {
-        var svgs = d3.selectAll(".mermaid svg");
-        svgs.each(function () {
-          var svg = d3.select(this);
-          svg.html("<g>" + svg.html() + "</g>");
-          var inner = svg.select("g");
-          var zoom = d3.zoom().on("zoom", function (event) {
-            inner.attr("transform", event.transform);
-          });
-          svg.call(zoom);
-        });
-      });
-    }
+  document.querySelectorAll("pre>code.language-mermaid").forEach((elem) => {
+    const backup = elem.parentElement;
+    backup.classList.add("unloaded");
+    let node = document.createElement("pre");
+    node.classList.add("mermaid");
+    node.appendChild(document.createTextNode(elem.textContent));
+    backup.after(node);
+  });
+
+  const nodes = document.querySelectorAll(".mermaid");
+  if (nodes.length === 0) return;
+
+  mermaid.initialize({ startOnLoad: false, theme: mermaidThemeName(determineComputedTheme()) });
+  if (document.fonts && document.fonts.ready) {
+    await document.fonts.ready;
   }
+  await mermaid.run({ nodes: nodes });
+  fitMermaidSvgs();
 });

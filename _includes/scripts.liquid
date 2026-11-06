@@ -31,21 +31,13 @@
 {% endif %}
 
 {% if page.mermaid and page.mermaid.enabled %}
-  <!-- Mermaid and D3 -->
+  <!-- Mermaid (without zoom: 'zoomable' is ignored, see mermaid-setup.js) -->
   <script
     defer
     src="{{ site.third_party_libraries.mermaid.url.js }}"
     integrity="{{ site.third_party_libraries.mermaid.integrity.js }}"
     crossorigin="anonymous"
   ></script>
-  {% if page.mermaid.zoomable %}
-    <script
-      defer
-      src="{{ site.third_party_libraries.d3.url.js }}"
-      integrity="{{ site.third_party_libraries.d3.integrity.js }}"
-      crossorigin="anonymous"
-    ></script>
-  {% endif %}
   <script defer src="{{ '/assets/js/mermaid-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 

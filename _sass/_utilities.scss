@@ -122,6 +122,17 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+// Mermaid measures text while drawing: if the theme transition is animating fonts and sizes,
+// it measures them halfway and the text ends up cut off. Diagrams are excluded.
+html.transition pre.mermaid,
+html.transition pre.mermaid *,
+html.transition svg[id^="mermaid"],
+html.transition svg[id^="mermaid"] *,
+html.transition [id^="dmermaid"],
+html.transition [id^="dmermaid"] * {
+  transition: none !important;
+}
+
 // Copy button
 
 .code-display-wrapper {
@@ -437,6 +448,18 @@ nav[data-toggle="toc"] {
 
 .unloaded {
   display: none !important;
+}
+
+// Mermaid diagrams: always inside their box; if one is wider than the column,
+// it shrinks or scrolls sideways within the box, never cut off.
+pre.mermaid {
+  overflow-x: auto;
+  text-align: center;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .medium-zoom-overlay,
