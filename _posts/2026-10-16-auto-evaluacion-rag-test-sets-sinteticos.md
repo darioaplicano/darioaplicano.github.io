@@ -10,7 +10,6 @@ toc:
   beginning: true
 mermaid:
   enabled: true
-  zoomable: true
 ---
 
 Al llevar un sistema de **generación aumentada por recuperación (RAG)** a producción, el cuello de botella rara vez está en la base de datos vectorial o en la latencia del modelo: está en **la evaluación**.

@@ -10,7 +10,6 @@ toc:
   beginning: true
 mermaid:
   enabled: true
-  zoomable: true
 ---
 
 En la primera ola de IA generativa, la mayoría de proyectos en empresas se quedaron en el modelo conversacional: una interfaz de chat, una cadena lineal y una base de datos vectorial para hacer RAG (*Retrieval-Augmented Generation*).

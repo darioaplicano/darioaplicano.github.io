@@ -8,7 +8,6 @@ tags: [agentes-ia, mcp, devops, productividad, aiops]
 description: "Por qué atar tus flujos a un único asistente de IA es un riesgo operativo y cómo separar el modelo, el harness y las herramientas para no depender de un proveedor."
 mermaid:
   enabled: true
-  zoomable: true
 ---
 
 El desarrollo asistido por IA ha pasado de autocompletar líneas a agentes que trabajan en la terminal: leen repositorios, ejecutan comandos y llaman a APIs.
