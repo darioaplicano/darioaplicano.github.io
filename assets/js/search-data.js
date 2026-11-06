@@ -37,11 +37,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-auto-evaluación-y-benchmarking-de-sistemas-rag-test-sets-sintéticos-y-métricas-sin-ground-truth-humano",
+        },{id: "post-auto-evaluación-de-sistemas-rag-test-sets-sintéticos-y-métricas-sin-ground-truth-humano",
         
-          title: "Auto-evaluación y Benchmarking de Sistemas RAG: Test Sets Sintéticos y Métricas sin «Ground...",
+          title: "Auto-evaluación de sistemas RAG: test sets sintéticos y métricas sin «ground truth» humano...",
         
-        description: "Cómo romper el cuello de botella de la validación manual en RAG utilizando generación sintética de tests con RAGAS y Azure AI Foundry para detectar regresiones en CI/CD sin esperar a un dataset humano.",
+        description: "Cómo evitar el cuello de botella de la validación manual en RAG con preguntas de prueba generadas automáticamente y métricas que detectan regresiones en CI/CD sin esperar a un dataset humano.",
         section: "Posts",
         handler: () => {
           
@@ -52,7 +52,7 @@ ninja.data = [{
         
           title: "Portabilidad multi-agente: cómo diseñar un entorno de trabajo independiente del LLM y de...",
         
-        description: "Por qué acoplar tus flujos a un único asistente de IA es un riesgo operativo y cómo desacoplar el modelo, el harness y las herramientas para evitar el vendor lock-in.",
+        description: "Por qué atar tus flujos a un único asistente de IA es un riesgo operativo y cómo separar el modelo, el harness y las herramientas para no depender de un proveedor.",
         section: "Posts",
         handler: () => {
           
