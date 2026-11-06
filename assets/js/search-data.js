@@ -82,7 +82,7 @@ ninja.data = [{
               window.location.href = "/teachings/influxdb-2x/";
             },},{id: "teachings-automatización-de-procesos-e-integración-de-apis-con-make",
           title: 'Automatización de Procesos e Integración de APIs con Make',
-          description: "Creación de escenarios avanzados de automatización, webhooks, transformación estructurada de datos y conexión de sistemas e IA con Make (en desarrollo para Imagina Formación).",
+          description: "Creación de escenarios avanzados de automatización, webhooks, transformación estructurada de datos y conexión de sistemas e IA con Make (serie de 42 píldoras para Imagina Formación, entregada; validación final en curso).",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/make-automatizaciones/";
             },},{
