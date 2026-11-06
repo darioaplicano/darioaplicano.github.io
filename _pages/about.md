@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p class="profile-item"><i class="fa-solid fa-location-dot"></i> Valladolid, España</p>
-    <p class="profile-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:alexdario.flores@telefonica.com">alexdario.flores@telefonica.com</a></p>
+    <p class="profile-item"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioaplicano/">Contacto por LinkedIn</a></p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
