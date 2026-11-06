@@ -13,8 +13,6 @@ mermaid:
   zoomable: true
 ---
 
-> **Revisado el 6 de noviembre de 2026**: el código se sustituye por diagramas para que el artículo no dependa de una versión concreta de las librerías, y se actualiza la gobernanza de MCP.
-
 En la primera ola de IA generativa, la mayoría de proyectos en empresas se quedaron en el modelo conversacional: una interfaz de chat, una cadena lineal y una base de datos vectorial para hacer RAG (*Retrieval-Augmented Generation*).
 
 Ese patrón funciona bien para soporte y consulta documental. Se queda corto cuando el objetivo es **automatizar trabajo operativo**.
