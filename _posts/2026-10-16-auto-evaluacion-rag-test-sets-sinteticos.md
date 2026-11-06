@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Auto-evaluación y Benchmarking de Sistemas RAG: Test Sets Sintéticos y Métricas sin «Ground Truth» Humano"
+title: "Auto-evaluación de sistemas RAG: test sets sintéticos y métricas sin «ground truth» humano"
 date: 2026-10-16 08:00:00 +0200
-description: "Cómo romper el cuello de botella de la validación manual en RAG utilizando generación sintética de tests con RAGAS y Azure AI Foundry para detectar regresiones en CI/CD sin esperar a un dataset humano."
+last_modified_at: 2026-11-06
+description: "Cómo evitar el cuello de botella de la validación manual en RAG con preguntas de prueba generadas automáticamente y métricas que detectan regresiones en CI/CD sin esperar a un dataset humano."
 categories: [ia, arquitectura]
 tags: [rag, evaluacion, azure, python, devops, aiops]
 toc:
@@ -12,204 +13,117 @@ mermaid:
   zoomable: true
 ---
 
-El mayor cuello de botella al llevar un sistema de **Generación Aumentada por Recuperación (RAG)** a producción rara vez está en la base de datos vectorial o en la latencia del modelo: está en **la evaluación**.
+Al llevar un sistema de **generación aumentada por recuperación (RAG)** a producción, el cuello de botella rara vez está en la base de datos vectorial o en la latencia del modelo: está en **la evaluación**.
 
-Cuando cambias la estrategia de fragmentación (*chunking*), sustituyes el modelo de *embeddings*, ajustas el *top-k* o actualizas el prompt del sistema, necesitas saber de inmediato: *¿he mejorado la precisión o he introducido una regresión silenciosa?*
+Cuando cambias la forma de trocear los documentos (*chunking*), el modelo de *embeddings*, el número de fragmentos recuperados (*top-k*) o el prompt del sistema, necesitas saber pronto si has mejorado o si has introducido una regresión silenciosa.
 
-El enfoque tradicional consiste en recurrir a expertos del dominio para que redacten manualmente cientos de preguntas con sus correspondientes respuestas canónicas (*ground truth*). En entornos corporativos reales, este proceso tarda semanas, bloquea los despliegues y queda desactualizado en cuanto la documentación de origen cambia.
+Lo habitual es pedir a expertos del dominio que redacten a mano cientos de preguntas con su respuesta de referencia (*ground truth*). En una empresa, eso tarda semanas, frena los despliegues y se queda desactualizado en cuanto cambia la documentación.
 
-Para iterar con la agilidad que exige la ingeniería de software moderna, la solución pasa por desacoplar la validación continua del esfuerzo humano mediante **test sets sintéticos** y **métricas de consistencia interna**.
-
----
-
-## 1. El dilema de la validación manual frente a CI/CD
-
-Validar un RAG manualmente no escala. Si tienes miles de páginas de procedimientos técnicos, manuales o wikis en constante cambio, depender de un lote estático de preguntas humanas plantea tres problemas críticos:
-
-1. **Sesgo de cobertura:** Los humanos tendemos a preguntar sobre lo que recordamos o sobre casos extremos que nos han dado problemas recientes, dejando desatendidas amplias zonas de la base documental.
-2. **Coste temporal:** Cada cambio arquitectónico en el pipeline de datos requiere re-validar manualmente para garantizar que no se han roto respuestas previas.
-3. **Fragilidad de la respuesta de referencia:** En lenguaje natural, una respuesta correcta puede formularse de infinitas formas. Evaluar mediante similitud léxica (BLEU, ROUGE) o distancia semántica contra un texto humano fijo castiga respuestas válidas que usaron sinónimos o una estructura diferente.
-
-La respuesta arquitectónica es invertir la dinámica: **usar la propia IA para interrogar a la base de conocimiento y medir su fidelidad sin requerir respuestas humanas predefinidas.**
+Para iterar más rápido, conviene separar la validación continua del esfuerzo humano con **test sets sintéticos** y **métricas que no dependen de respuestas escritas por personas**.
 
 ---
 
-## 2. Métricas de evaluación sin Ground Truth Humano
+## 1. Por qué la validación manual no encaja con CI/CD
 
-¿Cómo podemos evaluar si una respuesta es buena si no tenemos la «solución oficial» para contrastarla? La clave radica en descomponer la evaluación en **dos vectores ortogonales**: la calidad de la recuperación (*Retrieval*) y la fidelidad de la generación (*Generation*).
+Si tienes miles de páginas de procedimientos, manuales o wikis que cambian a menudo, depender de un lote fijo de preguntas humanas tiene tres problemas:
+
+1. **Cobertura sesgada:** las personas preguntamos sobre lo que recordamos o sobre los casos que nos dieron problemas hace poco. Grandes zonas de la documentación se quedan sin probar.
+2. **Coste en tiempo:** cada cambio en el pipeline obliga a revalidar a mano que no se ha roto nada.
+3. **Referencias frágiles:** una respuesta correcta se puede formular de muchas maneras. Comparar con un texto humano fijo, por coincidencia de palabras (BLEU, ROUGE) o por distancia semántica, penaliza respuestas válidas redactadas de otra forma.
+
+La alternativa es darle la vuelta: **usar la propia IA para generar preguntas a partir de la documentación y medir la fidelidad de las respuestas sin necesitar respuestas humanas.**
+
+---
+
+## 2. Qué se puede medir sin respuestas humanas
+
+La evaluación se separa en dos partes: la calidad de la **recuperación** (¿llegan los fragmentos adecuados?) y la de la **generación** (¿la respuesta se ciñe a ellos y responde a la pregunta?).
 
 ```mermaid
 flowchart TD
-    subgraph Pipeline["Pipeline RAG en Evaluación"]
-        Q["Pregunta (Input)"] --> R["Retriever (Búsqueda híbrida/vectorial)"]
-        R --> C["Contexto Recuperado (Chunks)"]
-        C --> G["Generador (LLM)"]
+    subgraph Pipeline["Pipeline RAG"]
+        Q["Pregunta"] --> R["Recuperador"]
+        R --> C["Fragmentos recuperados"]
+        C --> G["Modelo generador"]
         Q --> G
-        G --> A["Respuesta Generada (Output)"]
+        G --> A["Respuesta"]
     end
 
-    subgraph Metrics["Métricas sin Ground Truth Humano"]
-        C -.->|Verifica afirmaciones| M1["Faithfulness / Groundedness<br/>(¿Alucinación?)"]
-        A -.->|Compara claims| M1
-        
-        Q -.->|Relevancia semántica| M2["Answer Relevancy<br/>(¿Responde a la duda?)"]
-        A -.->|Evalúa intención| M2
-        
-        Q -.->|Calidad del ranking| M3["Context Precision / Recall<br/>(¿Están los chunks clave?)"]
-        C -.->|Alineamiento| M3
+    subgraph Metricas["Métricas"]
+        M1["Fidelidad<br/>(¿se inventa algo?)"]
+        M2["Relevancia de la respuesta<br/>(¿responde a la duda?)"]
+        M3["Precisión del contexto<br/>(¿los fragmentos útiles van primero?)"]
     end
+
+    C -.-> M1
+    A -.-> M1
+    Q -.-> M2
+    A -.-> M2
+    Q -.-> M3
+    C -.-> M3
 ```
 
-### A. Fidelidad / Fundamentación (*Faithfulness* o *Groundedness*)
-Mide si cada una de las afirmaciones (*claims*) presentes en la respuesta generada puede inferirse de forma estricta a partir del contexto recuperado.
-- Si el modelo afirma algo que no aparece en los chunks entregados, la puntuación cae.
-- **Qué detecta:** Alucinaciones del modelo y fuga de conocimiento paramétrico previo no respaldado por la documentación corporativa.
+### A. Fidelidad (*faithfulness* o *groundedness*)
+Mide si cada afirmación de la respuesta se puede deducir de los fragmentos recuperados.
+- Si el modelo afirma algo que no está en ellos, la puntuación baja.
+- **Qué detecta:** invenciones del modelo y conocimiento propio del modelo que la documentación no respalda.
 
-### B. Relevancia de la respuesta (*Answer Relevancy*)
-Mide si la respuesta generada atiende directamente a lo que el usuario preguntó, independientemente de si la información es verdadera.
-- Se penalizan respuestas redundantes, evasivas o que se van por las ramas sin resolver la intención de búsqueda.
+### B. Relevancia de la respuesta (*answer relevancy*)
+Mide si la respuesta atiende a lo que se preguntó, sea o no verdadera. Penaliza respuestas redundantes, evasivas o que se van por las ramas.
 
-### C. Precisión de contexto (*Context Precision*)
-Evalúa si los fragmentos de texto que contienen la información relevante se posicionaron en los primeros lugares de la lista de resultados entregada al LLM, minimizando el ruido en la ventana de contexto.
+### C. Precisión del contexto (*context precision*)
+Mide si los fragmentos con la información útil aparecen en los primeros puestos de lo que recibe el modelo, para que haya menos ruido en su contexto.
+
+Otras métricas, como la **exhaustividad del contexto** (*context recall*), sí necesitan una respuesta de referencia. Aquí ayudan los test sets sintéticos: la referencia la genera el propio proceso a partir de la documentación, no una persona.
 
 ---
 
-## 3. Estrategia 1: Generación sintética con RAGAS
+## 3. Cómo se genera un test set sintético
 
-El framework open-source **RAGAS** permite generar conjuntos de pruebas automatizados extrayendo nodos o fragmentos de la base documental indexada y sintetizando preguntas con distintos niveles de complejidad:
-- **Preguntas simples:** La respuesta reside en un único chunk.
-- **Preguntas de razonamiento multi-contexto (*Multi-hop*):** Exigen combinar información dispersa en dos o más documentos distintos.
-- **Preguntas condicionales:** Plantean un escenario hipotético («¿Qué debo hacer si ocurre X bajo la condición Y?»).
+Las herramientas de evaluación de RAG, tanto las de código abierto como RAGAS como los evaluadores gestionados de las plataformas cloud (por ejemplo, los de Microsoft Foundry), siguen el mismo patrón:
 
-```python
-from ragas.testset.generator import TestsetGenerator
-from ragas.testset.evolutions import simple, reasoning, multi_context
-from langchain_community.document_loaders import DirectoryLoader
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+1. **Toman fragmentos de la documentación indexada.**
+2. **Un modelo redacta preguntas** a partir de ellos, con distintos niveles de dificultad:
+   - **Simples:** la respuesta está en un solo fragmento.
+   - **De varios saltos (*multi-hop*):** hay que combinar información de dos o más documentos.
+   - **Condicionales:** plantean un escenario («¿qué hago si ocurre X con la condición Y?»).
+3. **Otro modelo, o el mismo con otro prompt, revisa** que cada pregunta tenga sentido y se pueda responder con la documentación, y descarta las que no.
+4. **Se guarda el conjunto** (pregunta, fragmentos de origen y respuesta de referencia sintética) y se reutiliza en cada ejecución.
 
-# 1. Cargar documentos corporativos
-loader = DirectoryLoader("./documentacion_tecnica", glob="**/*.md")
-documents = loader.load()
+Después, en cada cambio, el pipeline RAG responde a esas preguntas y un modelo evaluador puntúa la fidelidad, la relevancia y la precisión del contexto. Si alguna baja respecto a la ejecución anterior, la integración continua lo marca antes de desplegar.
 
-# 2. Configurar generador con modelos de razonamiento y embeddings
-generator_llm = ChatOpenAI(model="gpt-4o")
-critic_llm = ChatOpenAI(model="gpt-4o")
-embeddings = OpenAIEmbeddings()
+Los nombres de clases y funciones cambian con cada versión de estas librerías; el patrón no. Para el código al día, la documentación de [RAGAS](https://docs.ragas.io/) o la de [evaluadores de Microsoft Foundry](https://learn.microsoft.com/azure/foundry/concepts/built-in-evaluators).
 
-generator = TestsetGenerator.from_langchain(
-    generator_llm=generator_llm,
-    critic_llm=critic_llm,
-    embeddings=embeddings
-)
+---
 
-# 3. Generar dataset sintético con distribución de complejidad
-testset = generator.generate_with_langchain_docs(
-    documents,
-    test_size=50,
-    distributions={
-        simple: 0.4,
-        reasoning: 0.4,
-        multi_context: 0.2
-    }
-)
+## 4. El matiz importante: complemento, nunca sustituto
 
-# Exportar a DataFrame para ejecutar en pipelines de CI/CD
-df_eval = testset.to_pandas()
-```
+> **La auto-evaluación sintética mide consistencia interna, no si la respuesta es verdad en el mundo real.**
 
-Una vez ejecutado el pipeline RAG sobre este test set, la evaluación de *Faithfulness* y *Answer Relevancy* se computa de forma programática:
+1. **Si la fuente está desactualizada o tiene errores**, un RAG que recupere ese documento y lo repita fielmente obtendrá la máxima fidelidad. El sistema no sabe si el dato es cierto; solo sabe que no se lo ha inventado respecto a lo que recibió.
+2. **El evaluador también es un modelo**, con sus propios sesgos (por ejemplo, de posición o de longitud). Para reducir la variabilidad conviene fijar la temperatura a cero y pedirle una salida estructurada.
 
-```python
-from ragas import evaluate
-from ragas.metrics import faithfulness, answer_relevancy, context_precision
-from datasets import Dataset
+### Pruebas en dos niveles
 
-# Dataset con columnas: question, contexts, answer
-dataset = Dataset.from_pandas(df_resultados_rag)
+En producción funciona bien combinar las dos cosas:
 
-resultados = evaluate(
-    dataset=dataset,
-    metrics=[
-        faithfulness,
-        answer_relevancy,
-        context_precision
-    ]
-)
-
-print(resultados)
-# Salida: {'faithfulness': 0.94, 'answer_relevancy': 0.89, 'context_precision': 0.86}
+```mermaid
+flowchart TB
+    H["Validación humana experta<br/>unas decenas de preguntas críticas revisadas por especialistas<br/>antes de los despliegues importantes"]
+    S["Auto-evaluación sintética continua<br/>cientos de preguntas generadas automáticamente<br/>en cada cambio, dentro de CI/CD"]
+    H --- S
 ```
 
 ---
 
-## 4. Estrategia 2: Azure AI Foundry Evaluation SDK
+## Conclusión
 
-En infraestructuras empresariales basadas en Microsoft Cloud, el SDK **`azure-ai-evaluation`** proporciona evaluadores integrados preparados para pipelines de CI/CD en Azure DevOps o GitHub Actions.
+Esperar a tener un gran conjunto de preguntas humanas para empezar a medir un RAG suele acabar en un proyecto parado.
 
-Dispone de la clase `Simulator` para modelar usuarios interactuando con el sistema y evaluadores de backend como `GroundednessEvaluator` y `RelevanceEvaluator`:
-
-```python
-import os
-from azure.ai.evaluation import GroundednessEvaluator, RelevanceEvaluator
-
-# Configuración de credenciales del evaluador respaldado por Azure AI Foundry
-model_config = {
-    "azure_endpoint": os.environ["AZURE_OPENAI_ENDPOINT"],
-    "api_key": os.environ["AZURE_OPENAI_API_KEY"],
-    "azure_deployment": "gpt-4o",
-    "api_version": "2024-02-15-preview"
-}
-
-groundedness_eval = GroundednessEvaluator(model_config)
-relevance_eval = RelevanceEvaluator(model_config)
-
-# Evaluación puntual de una inferencia
-resultado_groundedness = groundedness_eval(
-    response="Para reiniciar el servicio de pagos en el nodo worker-01 ejecute systemctl restart payment-service.",
-    context="Procedimiento de mantenimiento: el servicio payment-service en worker-01 se reinicia mediante systemctl restart payment-service."
-)
-
-resultado_relevance = relevance_eval(
-    query="¿Cómo reinicio el servicio en el nodo worker-01?",
-    response="Para reiniciar el servicio de pagos en el nodo worker-01 ejecute systemctl restart payment-service."
-)
-
-print(f"Groundedness: {resultado_groundedness['groundedness']} / 5")
-print(f"Relevance: {resultado_relevance['relevance']} / 5")
-```
+Con **preguntas sintéticas y métricas de fidelidad** puedes tener una primera línea base enseguida. Así puedes cambiar la indexación, probar otros modelos de embeddings o ajustar parámetros sabiendo que, si algo empeora, la integración continua lo detectará antes de llegar a producción.
 
 ---
 
-## 5. El matiz crítico: Complemento, jamás sustituto
+## Para seguir leyendo
 
-Es indispensable mantener una postura técnica rigurosa frente a la auto-evaluación con LLMs:
-
-> [!IMPORTANT]
-> La auto-evaluación sintética mide **consistencia interna**, no verdad ontológica.
-
-1. **Si la fuente está desactualizada o contiene errores:** Un modelo RAG que recupere un documento erróneo y lo repita fielmente obtendrá una puntuación perfecta de `Faithfulness = 1.0` y `Groundedness = 5/5`. El sistema no sabe si el dato es verdadero en el mundo real; solo sabe que no ha alucinado respecto al contexto que se le entregó.
-2. **Evaluadores como LLM-as-a-Judge:** El evaluador sintético es otro LLM y está sujeto a sus propios sesgos de posición y longitud. Para minimizar variabilidad, deben fijarse temperaturas a cero y emplear prompts estructurados con esquemas JSON rígidos.
-
-### La pirámide de pruebas en RAG
-
-La mejor práctica en producción consiste en combinar ambos mundos en una estructura escalonada:
-
-```text
-       ▲
-      / \
-     /   \     Validación Humana Experta (Golden Dataset)
-    /     \    50-100 preguntas críticas curadas por especialistas de negocio.
-   /───────\   Se ejecutan antes de despliegues mayores a producción.
-  /         \
- /           \   Auto-evaluación Sintética Continua (RAGAS / Foundry)
-/             \  Cientos de preguntas generadas automáticamente en cada PR/commit.
-/───────────────\ Detección inmediata de regresiones de ranking y alucinación en CI/CD.
-```
-
----
-
-## Conclusión y Próximos Pasos
-
-Esperar a disponer de un conjunto masivo de preguntas humanas para empezar a medir un RAG es una receta segura para la parálisis del proyecto. 
-
-Implementar **generación sintética y métricas de fidelidad sin ground truth** permite establecer una línea base de observabilidad en cuestión de horas. Nos da la seguridad necesaria para refactorizar estrategias de indexación, probar nuevos modelos de embeddings y optimizar hiperparámetros con la tranquilidad de que cualquier degradación será detectada inmediatamente en nuestro pipeline de integración continua.
+- [De chatbots a agentes]({% post_url 2026-09-18-de-chatbots-a-agentes-langgraph-mcp %}): cómo se organiza un agente con grafos de estado y herramientas MCP.
