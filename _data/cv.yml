@@ -37,7 +37,7 @@ cv:
         summary: Formación corporativa especializada (bonificada FUNDAE) y diseño curricular en tecnologías avanzadas.
         highlights:
           - Impartición del curso especializado en InfluxDB 2.x (series temporales y lenguaje Flux).
-          - En producción / desarrollo de serie formativa especializada sobre Make (42 píldoras modulares e integraciones de APIs y webhooks).
+          - Serie formativa sobre Make (42 píldoras modulares sobre integraciones de APIs y webhooks): entregada, con la validación final de Imagina en curso.
           - Evaluación y desarrollo curricular en IA Generativa, ClickHouse y observabilidad de sistemas.
 
       - company: Logicalis Spain
@@ -167,6 +167,16 @@ cv:
       - name: Power BI & Power Virtual Agents
         issuer: Microsoft
         date: 2025-04
+        icon: fa-solid fa-certificate
+
+      - name: "Curso Completo: LangChain, LangGraph y Agentes IA con Python"
+        issuer: Udemy (Telefónica)
+        date: 2026-10
+        icon: fa-solid fa-certificate
+
+      - name: "Curso Make: Aprende a Automatizar Procesos Sin Programar"
+        issuer: Udemy (Telefónica)
+        date: 2026-10
         icon: fa-solid fa-certificate
 
       - name: Curso de MCP para Agentes de IA (Claude, VSCode y Copilot)
