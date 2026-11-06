@@ -115,21 +115,10 @@ let setGiscusTheme = (theme) => {
 };
 
 let setMermaidTheme = (theme) => {
-  // Re-render only diagrams that are already on the page (mermaid-setup.js creates them); no zoom.
-  const nodes = document.querySelectorAll(".mermaid");
-  if (nodes.length === 0) {
-    return;
+  // Rendering, its queue and fitting live in mermaid-setup.js (only on pages with diagrams)
+  if (typeof renderMermaid === "function") {
+    renderMermaid(theme);
   }
-  nodes.forEach((elem) => {
-    // The Mermaid source is the hidden code block right before the diagram
-    elem.removeAttribute("data-processed");
-    elem.textContent = elem.previousSibling.textContent;
-  });
-  // light theme name in mermaid is 'default': https://mermaid.js.org/config/theming.html#available-themes
-  mermaid.initialize({ startOnLoad: false, theme: theme == "light" ? "default" : theme });
-  mermaid.run({ nodes: nodes }).then(() => {
-    if (typeof fitMermaidSvgs === "function") fitMermaidSvgs();
-  });
 };
 
 let setDiff2htmlTheme = (theme) => {

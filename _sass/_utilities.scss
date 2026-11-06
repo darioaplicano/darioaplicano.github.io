@@ -129,7 +129,9 @@ html.transition pre.mermaid *,
 html.transition svg[id^="mermaid"],
 html.transition svg[id^="mermaid"] *,
 html.transition [id^="dmermaid"],
-html.transition [id^="dmermaid"] * {
+html.transition [id^="dmermaid"] *,
+html.transition pre.mermaid *:before,
+html.transition pre.mermaid *:after {
   transition: none !important;
 }
 
@@ -456,8 +458,7 @@ pre.mermaid {
   overflow-x: auto;
   text-align: center;
 
-  svg {
-    max-width: 100%;
+  > svg {
     height: auto;
   }
 }
