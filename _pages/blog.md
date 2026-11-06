@@ -143,6 +143,8 @@ pagination:
       <p class="post-meta">
         {{ read_time }} min read &nbsp; &middot; &nbsp;
         {{ post.date | date: '%d-%m-%Y' }}
+        {% assign last_date = post.last_modified_at | default: post.last_updated %}
+        {% if last_date %}&nbsp; &middot; &nbsp; actualizado el {{ last_date | date: '%d-%m-%Y' }}{% endif %}
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}
