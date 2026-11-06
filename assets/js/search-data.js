@@ -86,13 +86,6 @@ ninja.data = [{
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/make-automatizaciones/";
             },},{
-        id: 'social-email',
-        title: 'email',
-        section: 'Socials',
-        handler: () => {
-          window.open("mailto:%61%6C%65%78%64%61%72%69%6F.%66%6C%6F%72%65%73@%74%65%6C%65%66%6F%6E%69%63%61.%63%6F%6D", "_blank");
-        },
-      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
