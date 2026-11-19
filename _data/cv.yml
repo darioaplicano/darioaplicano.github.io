@@ -180,7 +180,7 @@ cv:
 
       - name: Curso de MCP para Agentes de IA (Claude, VSCode y Copilot)
         issuer: Udemy (Telefónica)
-        date: 2026-06
+        date: 2026-05
         icon: fa-solid fa-certificate
 
       - name: Data Science con Python
