@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-auto-evaluación-de-sistemas-rag-test-sets-sintéticos-y-métricas-sin-ground-truth-humano",
+        },{id: "post-el-efecto-bola-de-nieve-en-sesiones-largas-de-ia-por-qué-tu-chat-se-encarece-en-cada-turno-y-cómo-cortarlo",
+        
+          title: "El efecto bola de nieve en sesiones largas de IA: por qué tu...",
+        
+        description: "Por qué estirar el mismo chat con un asistente de IA multiplica el consumo de tokens y empeora las respuestas, con datos reales de medición y un patrón de aviso automático por contexto.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/efecto-bola-de-nieve-sesiones-largas-ia/";
+          
+        },
+      },{id: "post-auto-evaluación-de-sistemas-rag-test-sets-sintéticos-y-métricas-sin-ground-truth-humano",
         
           title: "Auto-evaluación de sistemas RAG: test sets sintéticos y métricas sin «ground truth» humano...",
         
